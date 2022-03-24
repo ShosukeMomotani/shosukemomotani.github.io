@@ -1,8 +1,10 @@
 import * as React from "react";
 import { CssBaseline } from "@mui/material";
-import { Container, Box, AppBar, Toolbar, Typography } from "@mui/material";
+import { Container, Box, AppBar, Toolbar, Typography, Stack } from "@mui/material";
 
-import LinkList from "./components/link-list";
+import Products from "./components/products";
+import Tweets from "./components/tweets";
+import Contacts from "./components/contacts";
 import AdsCard from "./components/ads-card";
 
 function App() {
@@ -17,10 +19,12 @@ function App() {
         </Toolbar>
       </AppBar>
       <Container maxWidth="sm" sx={{ height: "100vh" }}>
-        <Box sx={{ height: 48 }} />
-        <Box>
-          <LinkList></LinkList>
-        </Box>
+        <Box sx={{ height: 48 + 12 }} />
+        <Stack spacing={2}>
+          <Products></Products>
+          <Tweets></Tweets>
+          <Contacts></Contacts>
+        </Stack>
         <AdsCard />
       </Container>
     </React.Fragment>
